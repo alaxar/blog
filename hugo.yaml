@@ -1,0 +1,101 @@
+baseURL: http://localhost:1313/
+languageCode: en-us
+title: Low Level Mind
+theme: ["PaperMod"]
+
+params:
+  homeInfoParams:
+    Title: Welcome to "Low Level Mind"
+    Content: >
+        Hi, I’m Alazar, a Hacker and Software Engineer who loves building systems from scratch.
+        I write about low-level programming, operating systems, C/C++, security research, hacking tricks and computer graphics.
+
+        I believe abstractions are useful
+        but understanding what lies beneath them makes you dangerous (in a good way).
+
+  socialIcons: # optional
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/alazar-demessie-302174112/"
+    - name: "github"
+      url: "https://github.com/alaxar"
+    - name: "email"
+      url: "mailto:alazardemessie17@gmail.com"
+    - name: "hackthebox"
+      url: "https://app.hackthebox.com/users/1212074"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+  cover:
+    responsiveImages: false
+  
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowToc: true
+  TocShow: true
+  # ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  enableInlineShortcodes: true
+  displayFullLangName: true
+  author: ["Alazar"]
+  comments: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+
+      # - name: About
+      #   url: /about
+      #   weight: 2
+
+      # - name: Contact
+      #   url: /contact
+      #   weight: 3
+
+    - name: Blog
+      url: /posts
+      weight: 2
+    
+    - name: Projects
+      url: /projects
+      weight: 3
+
+    - name: Archives
+      url: /archives
+      weight: 4
+
+    - name: Search
+      identifier: search
+      url: /search
+      weight: 5
+
+services:
+  instagram:
+    disableInlineCSS: true
+  x:
+    disableInlineCSS: true
