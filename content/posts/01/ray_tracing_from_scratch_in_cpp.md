@@ -1,12 +1,13 @@
 ---
 date: '2026-02-15T23:34:40+03:00'
 draft: false
-summary: ray tracer
+summary: Graphics APIs and game engines make rendering look easy, but they hide most of the interesting details. I wanted to understand what actually happens under the hood, so I decided to build a small 3D renderer from scratch using C++
 weight: 1
-tags: ["Computer Graphics", "Game Development"]
+tags: ["Computer Graphics", "Game Development", "Ray Tracing"]
 title: 'Building a Ray Tracer from Scratch in C++ Part 1: Mathematical Foundations'
 cover:
-    image: image.webp
+    image: /images/image.webp
+    hiddenInSingle: true
 ---
 
 Graphics APIs and game engines make rendering look easy, but they hide most of the interesting details. I wanted to understand what actually happens under the hood, so I decided to build a small 3D renderer from scratch using C++.
@@ -51,7 +52,8 @@ A **ray** is similar to a line but with an important difference a line extends i
 
 Mathematically, a ray can be represented using a **parametric equation**
 
-![parameteric equation](/images/lagrida_latex_editor%20(13).png)
+$P = O + t\cdot\overrightarrow{d}$
+<!-- ![parameteric equation](/images/lagrida_latex_editor%20(13).png) -->
 
 Where:
 - *P* is any point along the ray
@@ -67,7 +69,7 @@ Increasing *`t`* moves the point along the ray indefinitely.
 
 let's say we have two points in a space "point A" and "point B", let's use 2D for now to better understand the above formula.
 
-A = (0, 0) and B = (4, 4)
+$A = (0, 0) and B = (4, 4)$
 
 > I will use a platform called desmos for plotting points, you can search it online
 
@@ -77,10 +79,23 @@ As we can see in the graph, we have two points, and we want to draw a line segme
 
 Example:
 
-![latex]()
+$\text{let A = (0, 0)and B = (4, 4)}\\\\$
+
+$\overrightarrow{d}_x = B_x - A_x\\\\$
+
+$\overrightarrow{d}_y = B_y - A_y\\\\$
 
 now we have the direction, if you look closely the vector **d** is the same as the point B, this is when the origin starts from 0, but if it was another point in the space it would be different.
 
 let's plug the direction in the equation and draw our line, but there is one missing piece, the ***"t"*** right? don't worry we don't have to do anything for 't' it has to start from 0.0 and increase it infinitly
 
-![parameter latex](/images/lagrida_latex_editor%20(3).png)
+<!-- ![parameter latex](/images/lagrida_latex_editor%20(3).png) -->
+$Let \text{ t} = 0.0\\\\$
+
+$P_x = A_x + t\cdot\overrightarrow{d}_x\\\\$
+
+$P_y = A_y + t\cdot\overrightarrow{d}_y\\\\$
+
+we repeat this process and increase the value of "t" until we reach B or exceed.
+
+![graph]()

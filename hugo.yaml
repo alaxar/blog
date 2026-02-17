@@ -1,11 +1,19 @@
-baseURL: http://alazar.github.io/
+baseURL: https://lowlevelmind.com/
 languageCode: en-us
 title: Low Level Mind
 theme: ["PaperMod"]
+googleAnalytics: G-95BFEG3JBZ
 
 params:
+  math: true
+  env: production
+  assets:
+    disableFingerprinting: true
+    disableHLJS: false
+  
   homeInfoParams:
-    Title: Welcome to "Low Level Mind"
+    Title: Welcome to 
+    SubTitle: Low Level Mind
     Content: >
         Hi, I’m Alazar, a Hacker and Software Engineer who loves building systems from scratch.
         I write about low-level programming, operating systems, C/C++, security research, hacking tricks and computer graphics.
@@ -22,6 +30,25 @@ params:
       url: "mailto:alazardemessie17@gmail.com"
     - name: "hackthebox"
       url: "https://app.hackthebox.com/users/1212074"
+    - name: "youtube"
+      url: "https://www.youtube.com/@alazardemessie6674"
+
+  ShowShareButtons: true
+  ShowToc: true
+  TocShow: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  # ShowAllPagesInArchive: true
+  ShowPageNums: true
+  enableInlineShortcodes: true
+  displayFullLangName: true
+  ShowReadingTime: true
+  author: ["Alazar"]
+  comments: true
+  ShowFullTextinRSS: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
 
 outputs:
   home:
@@ -29,40 +56,36 @@ outputs:
     - RSS
     - JSON # necessary for search
 
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "permalink", "summary", "content"]
+fuseOpts:
+  isCaseSensitive: false
+  shouldSort: true
+  location: 0
+  distance: 1000
+  threshold: 0.4
+  minMatchCharLength: 0
+  # limit: 10
+  keys: ["title", "permalink", "summary", "content"]
 
-  cover:
-    responsiveImages: false
-  
-  ShowShareButtons: true
-  ShowReadingTime: true
-  ShowToc: true
-  TocShow: true
-  # ShowBreadCrumbs: true
-  ShowPostNavLinks: true
-  ShowCodeCopyButtons: true
-  ShowAllPagesInArchive: true
-  ShowPageNums: true
-  enableInlineShortcodes: true
-  displayFullLangName: true
-  author: ["Alazar"]
-  comments: true
+cover:
+  responsiveImages: true
+
 
 markup:
-  goldmark:
-    renderer:
-      unsafe: true
   highlight:
-    noClasses: false
-
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ''
+    hl_inline: false
+    lineAnchors: ''
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: true
+    style: monokai
+    tabWidth: 4
+    wrapperClass: highlight
+    
 menu:
   main:
     - name: Home
@@ -82,7 +105,7 @@ menu:
       weight: 2
     
     - name: Projects
-      url: /projects
+      url: /projects/
       weight: 3
 
     - name: Archives
@@ -93,6 +116,11 @@ menu:
       identifier: search
       url: /search
       weight: 5
+
+    - name: Tags
+      identifier: tags
+      url: /tags/
+      weight: 6
 
 services:
   instagram:
