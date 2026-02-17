@@ -23,17 +23,7 @@ code, kbd, pre, samp {
     font-family: 'JetBrains Mono', monospace;
 }
 
-.projects-grid .card {
-  margin: 1rem;
-  transition: transform 0.2s;
-}
-
-.projects-grid .card:hover {
-  transform: translateY(-5px);
-}
-
 mark {
     /* background-color: #fbbf24; */
         background-color: #ffffff;
-
 }
